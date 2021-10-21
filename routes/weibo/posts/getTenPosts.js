@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { MongoClient } = require('mongodb');
-const uri = require('../../common/common.json').url;
+const uri = require('../../../common/common.json').url;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 router.get('/', function(req, res, next) {
     try {

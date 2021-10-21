@@ -31,8 +31,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/weibo/test', testRouter);
-var getTenPosts = require('./routes/weibo/getTenPosts');
+const getTenPosts = require('./routes/weibo/posts/getTenPosts');
 app.use('/weibo/getTenPosts', getTenPosts);
+const getUserInfo = require('./routes/weibo/users/getUserInfo');
+app.use('/weibo/getUserInfo', getUserInfo);
+const postWeibo = require('./routes/weibo/posts/postWeibo');
+app.use('/weibo/postWeibo', postWeibo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
